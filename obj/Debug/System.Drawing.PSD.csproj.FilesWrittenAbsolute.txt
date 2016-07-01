@@ -1,5 +1,5 @@
-/Users/zhuyuming/Downloads/System.Drawing.PSD-master/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
-/Users/zhuyuming/Downloads/System.Drawing.PSD-master/bin/Debug/System.Drawing.PSD.dll.mdb
-/Users/zhuyuming/Downloads/System.Drawing.PSD-master/bin/Debug/System.Drawing.PSD.dll
-/Users/zhuyuming/Downloads/System.Drawing.PSD-master/obj/Debug/System.Drawing.PSD.dll
-/Users/zhuyuming/Downloads/System.Drawing.PSD-master/obj/Debug/System.Drawing.PSD.dll.mdb
+/Users/zhuyuming/Projects/System.Drawing.PSD-master/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/Users/zhuyuming/Projects/System.Drawing.PSD-master/bin/Debug/System.Drawing.PSD.dll.mdb
+/Users/zhuyuming/Projects/System.Drawing.PSD-master/bin/Debug/System.Drawing.PSD.dll
+/Users/zhuyuming/Projects/System.Drawing.PSD-master/obj/Debug/System.Drawing.PSD.dll
+/Users/zhuyuming/Projects/System.Drawing.PSD-master/obj/Debug/System.Drawing.PSD.dll.mdb
