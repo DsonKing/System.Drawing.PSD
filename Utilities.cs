@@ -28,6 +28,14 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #endregion
 namespace System.Drawing.PSD
 {
+    public enum LayerSectionType
+    {
+        Layer = 0,
+        OpenFolder = 1,
+        ClosedFolder = 2,
+        SectionDivider = 3
+    }
+
 	public class Utilities
 	{
 		public static UInt16 SwapBytes(UInt16 x)

@@ -117,6 +117,10 @@ namespace System.Drawing.PSD
 		/// </summary>
 		public string Name { get; private set; }
 
+        public uint ID { get; private set; }
+
+        public LayerSectionType SectionType { get; private set; }
+
 		public BlendingRanges BlendingRangesData { get; set; }
         public Mask MaskData { get; private set; }
         public List<AdjusmentLayerInfo> AdjustmentInfo { get; private set; }
@@ -216,8 +220,15 @@ namespace System.Drawing.PSD
 
             foreach (var adjustmentInfo in AdjustmentInfo) {
                 switch (adjustmentInfo.Key) {
+                case "lsct":
+                case "lsdk":
+                    SectionType=(LayerSectionType)adjustmentInfo.DataReader.ReadInt32 ();
+                    break;
                 case "luni":
                     Name =adjustmentInfo.DataReader.ReadUnicodeString();
+                    break;
+                case "lyid":
+                    ID = adjustmentInfo.DataReader.ReadUInt32 ();
                     break;
                 }
             }
