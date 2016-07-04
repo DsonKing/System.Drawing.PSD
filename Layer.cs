@@ -119,9 +119,14 @@ namespace System.Drawing.PSD
 
         public Layer Parent { get; set; }
 
-        public List<Layer> Childrent { get; private set;}
+        private List<Layer> _children = new List<Layer>(0);
+        public List<Layer> Children {
+            get {
+              return  _children;
+            }
+        }
 
-        public uint ID { get; private set; }
+        public int ID { get; private set; }
 
         public LayerSectionType SectionType { get; private set; }
 
@@ -136,7 +141,7 @@ namespace System.Drawing.PSD
 			Channels = new List<Channel>();
 			Rect = Rectangle.Empty;
 			PsdFile = psdFile;
-            Childrent = new List<Layer> ();
+           
 		}
 
 		public Layer(BinaryReverseReader reverseReader, PsdFile psdFile)
@@ -233,7 +238,7 @@ namespace System.Drawing.PSD
                     Name =adjustmentInfo.DataReader.ReadUnicodeString();
                     break;
                 case "lyid":
-                    ID = adjustmentInfo.DataReader.ReadUInt32 ();
+                    ID = adjustmentInfo.DataReader.ReadInt32 ();
                     break;
                 }
             }
@@ -279,7 +284,7 @@ namespace System.Drawing.PSD
 
         public void AddItem (Layer layer)
         {
-            Childrent.Add (layer);
+            _children.Add (layer);
         }
 
         public override string ToString()

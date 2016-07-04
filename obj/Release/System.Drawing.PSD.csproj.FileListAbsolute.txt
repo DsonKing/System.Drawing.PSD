@@ -1,0 +1,4 @@
+D:\zhu\PSD\lib\net40\System.Drawing.PSD.dll
+D:\zhu\PSD\lib\net40\System.Drawing.PSD.pdb
+D:\zhu\PSD\obj\Release\System.Drawing.PSD.dll
+D:\zhu\PSD\obj\Release\System.Drawing.PSD.pdb

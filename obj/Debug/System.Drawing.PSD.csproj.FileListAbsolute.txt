@@ -1,0 +1,4 @@
+D:\zhu\PSD\bin\Debug\System.Drawing.PSD.dll
+D:\zhu\PSD\bin\Debug\System.Drawing.PSD.pdb
+D:\zhu\PSD\obj\Debug\System.Drawing.PSD.dll
+D:\zhu\PSD\obj\Debug\System.Drawing.PSD.pdb

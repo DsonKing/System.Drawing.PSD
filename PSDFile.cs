@@ -72,6 +72,7 @@ namespace System.Drawing.PSD
 			}
 		}
 
+        public Layer LayerTree { get; private set; }
 
 		private Int32 _rows;
 		/// <summary>
@@ -130,7 +131,7 @@ namespace System.Drawing.PSD
 		public ColorModes ColorMode { get; private set; }
 
         private List<Layer> _layers;
-		public IEnumerable<Layer> Layers { get { return _layers; } }
+        private IEnumerable<Layer> Layers { get { return _layers; } }
 		public Boolean AbsoluteAlpha { get; private set; }
         public Byte[][] ImageData { get; private set; }
         public ImageCompression ImageCompression { get; private set; }
@@ -383,27 +384,27 @@ namespace System.Drawing.PSD
 				layer.MaskData.LoadPixelData(reader);
 			}
 
-            var rootlayer = new Layer (this);
-            foreach (var layer in Layers) {
+            LayerTree = new Layer (this);
+            foreach (var layer in Layers.Reverse()) {
                 switch (layer.SectionType) {
                     case LayerSectionType.Layer:
                     {
-                        layer.Parent = rootlayer;
-                        rootlayer.AddItem (layer);
+                        layer.Parent = LayerTree;
+                        LayerTree.AddItem (layer);
                     };
                     break;
                     case LayerSectionType.ClosedFolder:
                     case LayerSectionType.OpenFolder:{
-                        layer.Parent = rootlayer;
-                        rootlayer.AddItem (layer);
-                        rootlayer = layer;
+                        layer.Parent = LayerTree;
+                        LayerTree.AddItem (layer);
+                        LayerTree = layer;
 
                     };
                     break;
 
                     case LayerSectionType.SectionDivider:
                     {
-                       rootlayer =  layer.Parent;
+                        LayerTree = LayerTree.Parent;
                     };
                     break;
 
