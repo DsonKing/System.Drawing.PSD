@@ -1,9 +1,7 @@
-﻿<Properties>
+﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="../../Downloads/Endogine-master/Endogine/Endogine/Serialization/Photoshop/Document.cs" line="239" offsetX="409" offsetY="3540" expression="loadOrderLayers" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
