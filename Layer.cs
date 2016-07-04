@@ -117,6 +117,10 @@ namespace System.Drawing.PSD
 		/// </summary>
 		public string Name { get; private set; }
 
+        public Layer Parent { get; set; }
+
+        public List<Layer> Childrent { get; private set;}
+
         public uint ID { get; private set; }
 
         public LayerSectionType SectionType { get; private set; }
@@ -132,6 +136,7 @@ namespace System.Drawing.PSD
 			Channels = new List<Channel>();
 			Rect = Rectangle.Empty;
 			PsdFile = psdFile;
+            Childrent = new List<Layer> ();
 		}
 
 		public Layer(BinaryReverseReader reverseReader, PsdFile psdFile)
@@ -271,6 +276,11 @@ namespace System.Drawing.PSD
 				foreach (AdjusmentLayerInfo info in AdjustmentInfo) info.Save(reverseWriter);
 			}
 		}
+
+        public void AddItem (Layer layer)
+        {
+            Childrent.Add (layer);
+        }
 
         public override string ToString()
         {

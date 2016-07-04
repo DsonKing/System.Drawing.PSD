@@ -383,6 +383,34 @@ namespace System.Drawing.PSD
 				layer.MaskData.LoadPixelData(reader);
 			}
 
+            var rootlayer = new Layer (this);
+            foreach (var layer in Layers) {
+                switch (layer.SectionType) {
+                    case LayerSectionType.Layer:
+                    {
+                        layer.Parent = rootlayer;
+                        rootlayer.AddItem (layer);
+                    };
+                    break;
+                    case LayerSectionType.ClosedFolder:
+                    case LayerSectionType.OpenFolder:{
+                        layer.Parent = rootlayer;
+                        rootlayer.AddItem (layer);
+                        rootlayer = layer;
+
+                    };
+                    break;
+
+                    case LayerSectionType.SectionDivider:
+                    {
+                       rootlayer =  layer.Parent;
+                    };
+                    break;
+
+                }
+            
+            }
+
 
 			if (reader.BaseStream.Position % 2 == 1) reader.ReadByte();
 
